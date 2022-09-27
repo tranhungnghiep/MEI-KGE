@@ -85,7 +85,7 @@ class MEI(torch.nn.Module):
     def embedding_def(self):
         """
         Define embedding matrices.
-        All embeddings are defined in vector format of size k*c.
+        All embeddings are defined in flat vector format of size k*c.
         """
         ent_embs = torch.nn.Parameter(torch.empty(len(self.data.ents), self.config.K * self.config.Ce,
                                                   dtype=torch.float, device=self.config.device, requires_grad=True))
@@ -109,13 +109,11 @@ class MEI(torch.nn.Module):
     def param_def(self):
         """
         Define weight vector used for combining embeddings.
+        Core tensor is defined in flat vector format of size cr*ce*ce, shared for all partitions.
         """
-        if self.config.core_tensor == 'shared':
-            wv = torch.nn.Parameter(torch.empty(self.config.Cr * self.config.Ce * self.config.Ce,
-                                                dtype=torch.float, device=self.config.device, requires_grad=True))
-        if self.config.core_tensor == 'nonshared':
-            wv = torch.nn.Parameter(torch.empty(self.config.K * self.config.Cr * self.config.Ce * self.config.Ce,
-                                                dtype=torch.float, device=self.config.device, requires_grad=True))
+        wv = torch.nn.Parameter(torch.empty(self.config.Cr * self.config.Ce * self.config.Ce,
+                                            dtype=torch.float, device=self.config.device, requires_grad=True))
+
         with torch.no_grad():
             if self.config.init_w == 0:
                 utils.truncated_normal_(wv.data, -1, 1, 0.0, 0.5)  # shape similar to normal(0, 0.5), but no outlier tail

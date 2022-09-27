@@ -76,7 +76,6 @@ def get_parser():
     parser.add_argument('--K', default=3, type=int, help='number of partitions in MEI embedding')
     parser.add_argument('--Ce', default=100, type=int, help='ent emb components size: 1 for DistMult, 2 for CP/CPh/SimplE/ComplEx, 4 for Quaternion')
     parser.add_argument('--Cr', default=100, type=int, help='rel emb components size: 1 for DistMult, 2 for CP/CPh/SimplE/ComplEx, 4 for Quaternion')
-    parser.add_argument('--core_tensor', default='nonshared', type=str, help='independent or dependent core tensor: nonshared, shared')
     parser.add_argument('--combine_score', default='sum', type=str, help='sum, mean')
     parser.add_argument('--compute_score', default='any', type=str, help='legacy: use default or specific compute_score method for shared and nonshared core tensor: any, specific')
     parser.add_argument('--init_emb', default=1, type=int, help='how to init emb: 1 (xavier: 2/(fanin+fanout)), 2 (1/fanout), 3 (1/c)')
