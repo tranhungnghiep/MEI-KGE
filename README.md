@@ -15,7 +15,7 @@ For WN18RR dataset:
 ```shell script
 
 ```
-For FB15K237 dataset:
+For FB15K-237 dataset:
 ```shell script
 
 ```
