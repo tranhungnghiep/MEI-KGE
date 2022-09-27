@@ -49,3 +49,8 @@ If you found this code or our work useful, please cite us.
     pages = {2262--2269},
   }
   ```
+
+### See also
+- AnalyzeKGE, preliminary experiments and analysis: https://github.com/tranhungnghiep/AnalyzeKGE
+- MEIM-KGE, MEI iMproved beyond block term format: https://github.com/tranhungnghiep/MEIM-KGE
+- KG20C, a scholarly knowledge graph benchmark dataset: https://github.com/tranhungnghiep/KG20C
