@@ -1,4 +1,4 @@
-# MEI: Multi-partition Embedding Interaction (keep it simple)
+# MEI: Multi-partition Embedding Interaction
 
 This implements the MEI knowledge graph embedding method in the paper [Multi-Partition Embedding Interaction with Block Term Format for Knowledge Graph Completion](https://arxiv.org/abs/2006.16365) (ECAI 2020). MEI unifies several recent state-of-the-art KGE models and provides an optimal efficiency-expressiveness solution. The code is optimized for high performance in PyTorch and demonstrates several important techniques in KGE.
 
@@ -7,7 +7,7 @@ Knowledge graph embedding methods (KGE) aim to learn low-dimensional vector repr
 ## Installation
 - Clone the repository to your local machine: `git clone https://github.com/tranhungnghiep/MEI-KGE/`
 - Go to the repository directory: `cd MEI-KGE/`
-- Install required packages, you may install in a separate environment: `pip install -r requirements`
+- Install required packages, you may install in a separate environment: `pip install -r requirements.txt`
 - Go to the source directory: `cd src/`
 
 ## How to run
