@@ -8,10 +8,9 @@ Knowledge graph embedding methods (KGE) aim to learn low-dimensional vector repr
 - Clone the repository to your local machine: `git clone https://github.com/tranhungnghiep/MEI-KGE/`
 - Go to the repository directory: `cd MEI-KGE/`
 - Install required packages, you may install in a separate environment: `pip install -r requirements.txt`
-- Go to the source directory: `cd src/`
 
 ## How to run
-The following commands contain optimal hyperparameters for MEI.
+Go to the source directory (`cd src/`) and run the following commands.
 
 On WN18RR, MEI 3x100:
 ```shell script
@@ -27,7 +26,24 @@ python main.py --seed 7 --config_id "rep" --gpu 0 --model MEI --in_path ../datas
 ```
 
 ## Results
+The hyperparameters were tuned for higher MRR on the validation sets. 
 
+MEI achieves state-of-the-art results using quite small number of parameters.
+
+| WN18RR              | MR | MRR | H@1 | H@3 | H@10 |
+| ------------------- | - | - | - | - | - |
+| MEI 3x100, valid set| 3102.417 | 0.481 | 0.448 | 0.492 | 0.544 |
+| MEI 3x100, test set | 3291.269 | 0.483 | 0.447 | 0.497 | 0.553 |
+
+| FB15K-237           | MR | MRR | H@1 | H@3 | H@10 |
+| ------------------- | - | - | - | - | - |
+| MEI 3x100, valid set| 134.995 | 0.370 | 0.278 | 0.404 | 0.554 |
+| MEI 3x100, test set | 141.244 | 0.364 | 0.270 | 0.398 | 0.550 |
+
+| YAGO3-10            | MR | MRR | H@1 | H@3 | H@10 |
+| ------------------- | - | - | - | - | - |
+| MEI 5x100, valid set| 834.918 | 0.579 | 0.508 | 0.619 | 0.706 |
+| MEI 5x100, test set | 756.062 | 0.578 | 0.505 | 0.622 | 0.710 |
 
 ## How to cite
 If you found this code or our work useful, please cite us.
