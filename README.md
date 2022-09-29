@@ -26,7 +26,7 @@ python main.py --seed 7 --config_id "rep" --gpu 0 --model MEI --in_path ../datas
 ```
 
 ## Results
-The hyperparameters were tuned for higher MRR on the validation sets. 
+The above hyperparameters were tuned for MRR on the validation sets, higher MRR is better.
 
 MEI achieves state-of-the-art results using quite small number of parameters.
 
