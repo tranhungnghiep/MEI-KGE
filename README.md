@@ -50,6 +50,25 @@ MEI achieves state-of-the-art results using quite small number of parameters.
 | MEI 5x100, valid set| 834.918 | 0.579 | 0.508 | 0.619 | 0.706 |
 | MEI 5x100, test set | 756.062 | 0.578 | 0.505 | 0.622 | 0.710 |
 
+## How to implement your own KGE model
+It is easy to implement new KGE model by extending the MEI class and only rewriting the score function. Our framework provides the loss functions, regularizations, constraints, experiments, evaluations, data sampling, etc. for training and evaluating quicly. For example:
+
+```python
+class YourKGE(MEI):
+    def __init__(self, data, config):
+        super().__init__(data, config)
+
+    def compute_score(self, h: torch.Tensor, r: torch.Tensor) -> torch.Tensor:
+        """
+        Main logic: compute the score.
+        Input: tensor in batch: (batch,) of indices (1-hot vector)
+        :return: tensor in batch: (batch, num_ent) scores
+        """
+        # Simple example with trilinear dot product. Feel free to change to your new score function.
+        score = (self.ent_embs[h] * self.rel_embs[r]) @ self.ent_embs.permute(1, 0)
+        return score
+```
+
 ## How to cite
 If you found this code or our work useful, please cite us.
 - *Hung Nghiep Tran and Atsuhiro Takasu. [Multi-Partition Embedding Interaction with Block Term Format for Knowledge Graph Completion](https://arxiv.org/abs/2006.16365). In Proceedings of the European Conference on Artificial Intelligence (ECAI), 2020.*  
