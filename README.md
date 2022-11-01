@@ -51,7 +51,7 @@ MEI achieves state-of-the-art results using quite small number of parameters.
 | MEI 5x100, test set | 756.062 | 0.578 | 0.505 | 0.622 | 0.710 |
 
 ## How to implement your own KGE model
-It is easy to implement new KGE model by extending the MEI class and only rewriting the score function. Our framework provides the loss functions, regularizations, constraints, experiments, evaluations, data sampling, etc. for training and evaluating quicly. For example:
+It is easy to implement new KGE model by extending the MEI class and only rewriting the score function. Our framework provides the loss functions, regularizations, constraints, experiments, evaluations, data sampling, etc. for training and evaluating quickly. For example:
 
 ```python
 class YourKGE(MEI):
