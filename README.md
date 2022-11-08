@@ -5,7 +5,7 @@
   <i><b>Figure 1:</b> Architecture of MEI with block term format in three different views for the local interaction: Tucker format, parameterized bilinear format, and neural network format.</i>
 </p>
 
-This code implements the MEI knowledge graph embedding method in the paper [Multi-Partition Embedding Interaction with Block Term Format for Knowledge Graph Completion](https://arxiv.org/abs/2006.16365) (ECAI 2020). MEI unifies several recent state-of-the-art KGE models and provides an optimal efficiency-expressiveness solution. The code is optimized for high performance in PyTorch, demonstrates several important KGE techniques, and features some recent state-of-the-art models including W2V, DistMult, CP, SimplE, ComplEx, RotatE, Quaternion, and MEI.
+This is a pure Python code implementing the MEI knowledge graph embedding method in the paper [Multi-Partition Embedding Interaction with Block Term Format for Knowledge Graph Completion](https://arxiv.org/abs/2006.16365) (ECAI 2020). MEI unifies several recent state-of-the-art KGE models and provides an optimal efficiency-expressiveness solution. The code is optimized for high performance in PyTorch, demonstrates several important KGE techniques, and features some recent state-of-the-art models including W2V, DistMult, CP, SimplE, ComplEx, RotatE, Quaternion, and MEI.
 
 Knowledge graph embedding methods (KGE) aim to learn low-dimensional vector representations of entities and relations in knowledge graphs. The models take input in the format of triples (h, t, r) denoting head entity, tail entity, and relation, respectively, and output their embedding vectors as well as solving the link prediction task. For more information, please see our paper.
 
