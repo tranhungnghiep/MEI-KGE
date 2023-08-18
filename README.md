@@ -64,7 +64,7 @@ class YourKGE(MEI):
         Input: tensor in batch: (batch,) of indices (1-hot vector)
         :return: tensor in batch: (batch, num_ent) scores
         """
-        # Simple example with trilinear dot product. Feel free to change to your new score function.
+        # Example of trilinear dot product score. Feel free to change to your score function.
         score = (self.ent_embs[h] * self.rel_embs[r]) @ self.ent_embs.permute(1, 0)
         return score
 ```
